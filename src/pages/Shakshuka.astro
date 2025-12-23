@@ -1,0 +1,132 @@
+---
+import "../styles/global.css";
+
+/* ========= BASIC INFO ========= */
+const title = "Shakshuka";
+const subtitle = "Beiguo's meat meat version";
+const dateCreated = "2025-03-10";
+const dateUpdated = "—";
+
+/* ========= METADATA ========= */
+const servings = "2–3";
+const prepTime = "20 min";
+const cookTime = "40 min";
+const difficulty = "Medium";
+
+/* ========= LINKS ========= */
+const externalLinks = [
+  { label: "Original inspiration", url: "" },
+  { label: "YouTube reference", url: "" }
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <main class="recipe">
+
+      <!-- TITLE -->
+      <header>
+        <h1>{title}</h1>
+        <p class="subtitle">{subtitle}</p>
+      </header>
+
+      <!-- META INFO -->
+      <section class="meta">
+        <span>🗓️ Created: {dateCreated}</span>
+        <span>✏️ Updated: {dateUpdated}</span>
+        <span>🍽️ Servings: {servings}</span>
+        <span>⏱ Prep: {prepTime}</span>
+        <span>🔥 Cook: {cookTime}</span>
+        <span>🌶 Difficulty: {difficulty}</span>
+      </section>
+
+      <img
+        src="/images/IMG_2676.HEIC"
+        alt="Beiguo's version of meat-indulgent shakshuka"
+        class="recipe-photo"
+      />
+
+      <!-- INGREDIENTS -->
+      <section>
+        <h2>🧺 Ingredients</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+
+      <!-- STEPS -->
+      <section>
+        <h2>👩‍🍳 Steps</h2>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
+
+      <!-- NOTES -->
+      <section>
+        <h2>📝 Notes</h2>
+        <ul>
+          <li>What surprised us</li>
+          <li>What to change next time</li>
+          <li>What NOT to mess up again</li>
+        </ul>
+      </section>
+
+      <!-- VARIATIONS -->
+      <section>
+        <h2>🔁 Variations</h2>
+        <ul>
+          <li>Vegetarian version</li>
+          <li>Lazy-night shortcut</li>
+          <li>Fancy date-night version</li>
+        </ul>
+      </section>
+
+      <!-- PAIRINGS -->
+      <section>
+        <h2>🍷 Pairings</h2>
+        <ul>
+          <li>Wine / drink</li>
+          <li>Side dish</li>
+        </ul>
+      </section>
+
+      <!-- PHOTOS -->
+      <section>
+        <h2>📸 Photos</h2>
+        <p>Add images here later.</p>
+      </section>
+
+      <!-- EXTERNAL LINKS -->
+      {externalLinks.length > 0 && (
+        <section>
+          <h2>🔗 References</h2>
+          <ul>
+            {externalLinks.map(link => (
+              <li><a href={link.url} target="_blank">{link.label}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- MEMORIES -->
+      <section>
+        <h2>💭 Memories</h2>
+        <p>
+          Where were we? What music was playing? Who burned what?
+        </p>
+      </section>
+
+    </main>
+  </body>
+</html>
