@@ -1,16 +1,36 @@
 ---
 import "../styles/global.css";
 ---
-<html>
+<html lang="zh">
+  <head>
+    <!-- 👇 REQUIRED FOR CHINESE / EMOJI -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>卷贝厨房 JuanBei Kitchen</title>
+  </head>
+
   <body>
     <main>
-      <h1>JuanBei Kitchen</h1>
-
+      <h1>卷贝厨房 JuanBei Kitchen</h1>
       <p>A place for things we cooked, loved, and want to remember.</p>
+      <p>记录我们一起做过的每一道菜。</p>
 
-      <ul>
-        <li><a href="/Shakshuka">Shakshuka</a></li>
-      </ul>
+      <h2>菜单 Recipes</h1>
+
+        <ul class="recipe-list">
+          <li>
+            <a href="/Shakshuka">
+              🍳 北非蛋 Shakshuka
+            </a>
+          </li>
+
+          <li>
+            <a href="/veggiepot">
+              🥬 水煮菜
+            </a>
+          </li>
+
+        </ul>
     </main>
   </body>
 </html>
