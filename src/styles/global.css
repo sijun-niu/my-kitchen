@@ -80,3 +80,17 @@ em {
   margin: 1rem 0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+
+  margin: 16px 0;
+  padding: 12px;
+  background: #f7f7f7;
+  border-radius: 12px;
+
+  font-size: 0.95rem;
+}
+
