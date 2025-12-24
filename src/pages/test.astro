@@ -1,41 +1,148 @@
 ---
 import "../styles/global.css";
-const title = "北非蛋 Shakshuka";
 
+/* ========= 基本信息 ========= */
+const titleZH = "🍝 菜名";
+const titleEN = "Recipe Name";
+
+const subtitleZH = "这道菜为什么值得反复做";
+const subtitleEN = "Why this recipe is special";
+
+const dateCreated = "2025-03-10";
+const dateUpdated = "—";
+
+/* ========= 详细信息 ========= */
+const servings = "2–3 人份";
+const prepTime = "15 分钟";
+const cookTime = "25 分钟";
+const difficultyZH = "简单";
+const difficultyEN = "Easy";
+
+/* ========= 外部链接 ========= */
+const externalLinks = [
+  { labelZH: "原始灵感", labelEN: "Original inspiration", url: "" },
+  { labelZH: "视频参考", labelEN: "YouTube reference", url: "" }
+];
 ---
+
 <html lang="zh">
   <head>
-    <!-- 👇 THIS LINE FIXES EVERYTHING -->
     <meta charset="UTF-8" />
-    <title>{title}</title>
+    <title>{titleZH}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <main>
-      <h1> 北非蛋 Shakshuka</h1>
+    <main class="recipe">
 
-      <img
-        src="/images/IMG_2676.HEIC"
-        alt="Beiguo's version of meat-indulgent shakshuka"
-        class="recipe-photo"
-      />
+      <!-- 标题 -->
+      <header>
+        <h1>
+          {titleZH}
+          {titleEN && <span class="en">({titleEN})</span>}
+        </h1>
 
+        <p class="subtitle">
+          {subtitleZH}
+          {subtitleEN && <span class="en"> — {subtitleEN}</span>}
+        </p>
+      </header>
 
-      <p><em>Why we love this:</em> 肉香四溢 大快朵颐</p>
+      <!-- 元信息 -->
+      <section class="meta">
+        <span>🗓️ 创建：{dateCreated}</span>
+        <span>✏️ 更新：{dateUpdated}</span>
+        <span>🍽️ 份量：{servings}</span>
+        <span>⏱️ 准备：{prepTime}</span>
+        <span>🔥 烹饪：{cookTime}</span>
+        <span>
+          🌶 难度：{difficultyZH}
+          {difficultyEN && <span class="en"> ({difficultyEN})</span>}
+        </span>
+      </section>
 
+      <!-- 食材 -->
+      <section>
+        <h2>🧺 食材</h2>
+        <ul>
+          <li>鸡腿肉 500g <span class="en">(Chicken thighs)</span></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
 
-      <h2>Ingredients / 食材</h2>
-      <ul>
-        <li>鸡蛋</li>
-        <li>碎牛肉馅</li>
-        <li>番茄</li>
-      </ul>
+      <!-- 做法 -->
+      <section>
+        <h2>👩‍🍳 做法</h2>
+        <ol>
+          <li>
+            提前调味，至少 15 分钟
+            <span class="en"> (Season at least 15 min ahead)</span>
+          </li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
 
-      <h2>Steps / 做法</h2>
-      <ol>
-        <li>煸炒牛肉碎和番茄。</li>
-        <li>最后加入鸡蛋，关火焖熟。</li>
-      </ol>
+      <!-- 笔记 -->
+      <section>
+        <h2>📝 笔记</h2>
+        <ul>
+          <li>这次火候刚好，下次可以再多一点辣</li>
+          <li></li>
+        </ul>
+      </section>
+
+      <!-- 变化 -->
+      <section>
+        <h2>🔁 变化</h2>
+        <ul>
+          <li>素食版：用杏鲍菇</li>
+          <li>懒人版：空气炸锅</li>
+          <li>升级版：加黄油和白葡萄酒</li>
+        </ul>
+      </section>
+
+      <!-- 搭配 -->
+      <section>
+        <h2>🍷 搭配</h2>
+        <ul>
+          <li>干白葡萄酒</li>
+          <li>清爽沙拉</li>
+        </ul>
+      </section>
+
+      <!-- 照片 -->
+      <section>
+        <h2>📸 照片</h2>
+        <p>以后补图。</p>
+      </section>
+
+      <!-- 参考 -->
+      {externalLinks.length > 0 && (
+        <section>
+          <h2>🔗 参考</h2>
+          <ul>
+            {externalLinks.map(link => (
+              <li>
+                <a href={link.url} target="_blank">
+                  {link.labelZH}
+                  {link.labelEN && <span class="en"> ({link.labelEN})</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- 回忆 -->
+      <section>
+        <h2>💭 回忆</h2>
+        <p>
+          那天在哪？什么天气？谁负责洗锅？
+        </p>
+      </section>
+
     </main>
   </body>
 </html>

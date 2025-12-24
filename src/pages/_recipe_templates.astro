@@ -1,123 +1,145 @@
 ---
 import "../styles/global.css";
 
-/* ========= BASIC INFO ========= */
-const title = "🍝 Recipe Name";
-const subtitle = "Short vibe / why we love it";
+/* ========= 基本信息 ========= */
+const titleZH = "🍝 菜名";
+const titleEN = "Recipe Name";
+
+const subtitleZH = "这道菜为什么值得反复做";
+const subtitleEN = "Why this recipe is special";
+
 const dateCreated = "2025-03-10";
 const dateUpdated = "—";
 
-/* ========= METADATA ========= */
-const servings = "2–3";
-const prepTime = "15 min";
-const cookTime = "25 min";
-const difficulty = "Easy";
+/* ========= 详细信息 ========= */
+const servings = "2–3 人份";
+const prepTime = "15 分钟";
+const cookTime = "25 分钟";
+const difficultyZH = "简单";
+const difficultyEN = "Easy";
 
-/* ========= LINKS ========= */
+/* ========= 外部链接 ========= */
 const externalLinks = [
-  { label: "Original inspiration", url: "" },
-  { label: "YouTube reference", url: "" }
+  { labelZH: "原始灵感", labelEN: "Original inspiration", url: "" },
+  { labelZH: "视频参考", labelEN: "YouTube reference", url: "" }
 ];
 ---
 
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <title>{title}</title>
+    <title>{titleZH}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
     <main class="recipe">
 
-      <!-- TITLE -->
+      <!-- 标题 -->
       <header>
-        <h1>{title}</h1>
-        <p class="subtitle">{subtitle}</p>
+        <h1>
+          {titleZH}
+          {titleEN && <span class="en">({titleEN})</span>}
+        </h1>
+
+        <p class="subtitle">
+          {subtitleZH}
+          {subtitleEN && <span class="en"> — {subtitleEN}</span>}
+        </p>
       </header>
 
-      <!-- META INFO -->
+      <!-- 元信息 -->
       <section class="meta">
-        <span>🗓️ Created: {dateCreated}</span>
-        <span>✏️ Updated: {dateUpdated}</span>
-        <span>🍽️ Servings: {servings}</span>
-        <span>⏱ Prep: {prepTime}</span>
-        <span>🔥 Cook: {cookTime}</span>
-        <span>🌶 Difficulty: {difficulty}</span>
+        <span>🗓️ 创建：{dateCreated}</span>
+        <span>✏️ 更新：{dateUpdated}</span>
+        <span>🍽️ 份量：{servings}</span>
+        <span>⏱️ 准备：{prepTime}</span>
+        <span>🔥 烹饪：{cookTime}</span>
+        <span>
+          🌶 难度：{difficultyZH}
+          {difficultyEN && <span class="en"> ({difficultyEN})</span>}
+        </span>
       </section>
 
-      <!-- INGREDIENTS -->
+      <!-- 食材 -->
       <section>
-        <h2>🧺 Ingredients</h2>
+        <h2>🧺 食材</h2>
         <ul>
-          <li></li>
+          <li>鸡腿肉 500g <span class="en">(Chicken thighs)</span></li>
           <li></li>
           <li></li>
         </ul>
       </section>
 
-      <!-- STEPS -->
+      <!-- 做法 -->
       <section>
-        <h2>👩‍🍳 Steps</h2>
+        <h2>👩‍🍳 做法</h2>
         <ol>
-          <li></li>
+          <li>
+            提前调味，至少 15 分钟
+            <span class="en"> (Season at least 15 min ahead)</span>
+          </li>
           <li></li>
           <li></li>
         </ol>
       </section>
 
-      <!-- NOTES -->
+      <!-- 笔记 -->
       <section>
-        <h2>📝 Notes</h2>
+        <h2>📝 笔记</h2>
         <ul>
-          <li>What surprised us</li>
-          <li>What to change next time</li>
-          <li>What NOT to mess up again</li>
+          <li>这次火候刚好，下次可以再多一点辣</li>
+          <li></li>
         </ul>
       </section>
 
-      <!-- VARIATIONS -->
+      <!-- 变化 -->
       <section>
-        <h2>🔁 Variations</h2>
+        <h2>🔁 变化</h2>
         <ul>
-          <li>Vegetarian version</li>
-          <li>Lazy-night shortcut</li>
-          <li>Fancy date-night version</li>
+          <li>素食版：用杏鲍菇</li>
+          <li>懒人版：空气炸锅</li>
+          <li>升级版：加黄油和白葡萄酒</li>
         </ul>
       </section>
 
-      <!-- PAIRINGS -->
+      <!-- 搭配 -->
       <section>
-        <h2>🍷 Pairings</h2>
+        <h2>🍷 搭配</h2>
         <ul>
-          <li>Wine / drink</li>
-          <li>Side dish</li>
+          <li>干白葡萄酒</li>
+          <li>清爽沙拉</li>
         </ul>
       </section>
 
-      <!-- PHOTOS -->
+      <!-- 照片 -->
       <section>
-        <h2>📸 Photos</h2>
-        <p>Add images here later.</p>
+        <h2>📸 照片</h2>
+        <p>以后补图。</p>
       </section>
 
-      <!-- EXTERNAL LINKS -->
+      <!-- 参考 -->
       {externalLinks.length > 0 && (
         <section>
-          <h2>🔗 References</h2>
+          <h2>🔗 参考</h2>
           <ul>
             {externalLinks.map(link => (
-              <li><a href={link.url} target="_blank">{link.label}</a></li>
+              <li>
+                <a href={link.url} target="_blank">
+                  {link.labelZH}
+                  {link.labelEN && <span class="en"> ({link.labelEN})</span>}
+                </a>
+              </li>
             ))}
           </ul>
         </section>
       )}
 
-      <!-- MEMORIES -->
+      <!-- 回忆 -->
       <section>
-        <h2>💭 Memories</h2>
+        <h2>💭 回忆</h2>
         <p>
-          Where were we? What music was playing? Who burned what?
+          那天在哪？什么天气？谁负责洗锅？
         </p>
       </section>
 
